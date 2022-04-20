@@ -38,7 +38,8 @@ set(EMCC_ARGS
   --llvm-lto 1
   --post-js glue.js
   --post-js ${AMMO_ONLOAD_FILE}
-  -O3
+  -O0
+  -g
   -s ALLOW_MEMORY_GROWTH=${ALLOW_MEMORY_GROWTH}
   -s ALLOW_TABLE_GROWTH=1
   -s EXPORTED_FUNCTIONS=["_malloc"]
@@ -74,6 +75,8 @@ set(EMCC_WASM_ARGS ${EMCC_ARGS}
 
 set(EMCC_GLUE_ARGS
   -c
+  -g
+  -O0
   -I${BULLET_SRC_DIR}
   -include${AMMO_HEADER_FILE})
 
